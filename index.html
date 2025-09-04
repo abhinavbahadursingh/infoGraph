@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Management System Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .flow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #0a9396;
+            margin: 0.5rem 0;
+        }
+         .decision-block {
+            border: 2px dashed #ee9b00;
+            background-color: #fffbeb;
+        }
+        .kpi-box {
+            background-color: #005f73;
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .kpi-number {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #94d2bd;
+        }
+        .kpi-label {
+            margin-top: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#005f73] mb-4">The Future of Urban Mobility</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Leveraging AI and Blockchain to create safer, smarter, and more efficient city streets. This system transforms raw traffic data into life-saving actions.</p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#0a9396]">System Workflow: From Camera to Action</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center">
+                <div class="flow-card">
+                    <div class="text-2xl mb-2">📹</div>
+                    <h3 class="font-semibold">Input Layer</h3>
+                    <p class="text-sm text-gray-500">Live video from traffic cameras</p>
+                </div>
+                <div class="flow-arrow hidden lg:flex">→</div>
+                <div class="flow-arrow flex lg:hidden justify-center my-4">↓</div>
+
+                <div class="flow-card">
+                     <div class="text-2xl mb-2">🧠</div>
+                    <h3 class="font-semibold">Processing Layer</h3>
+                    <p class="text-sm text-gray-500">YOLO + OpenCV AI Analysis</p>
+                </div>
+                 <div class="flow-arrow hidden lg:flex">→</div>
+                 <div class="flow-arrow flex lg:hidden justify-center my-4">↓</div>
+                
+                <div class="flow-card decision-block col-span-1 md:col-span-3 lg:col-span-1">
+                    <div class="text-2xl mb-2">🤔</div>
+                    <h3 class="font-semibold">Decision Point</h3>
+                    <p class="text-sm text-gray-500">Crash Detected?</p>
+                </div>
+            </div>
+            
+             <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 items-center my-4">
+                 <div class="col-start-1 lg:col-start-3 flex justify-center relative">
+                     <div class="flow-arrow">↓</div>
+                     <span class="absolute top-1/2 -left-16 transform -translate-y-1/2 bg-white px-2 font-semibold text-red-600">Yes</span>
+                     <span class="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-white px-2 font-semibold text-green-600">No</span>
+                 </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch justify-center">
+                <div class="flow-card md:col-start-1 lg:col-start-2">
+                     <div class="text-2xl mb-2">🚨</div>
+                    <h3 class="font-semibold">Accident Alert</h3>
+                    <p class="text-sm text-gray-500">Trigger Emergency Response</p>
+                </div>
+                <div class="flow-arrow hidden md:flex lg:hidden justify-center items-center">↓</div>
+                <div class="flow-card md:col-start-2 lg:col-start-4">
+                     <div class="text-2xl mb-2">📈</div>
+                    <h3 class="font-semibold">Normal Traffic</h3>
+                    <p class="text-sm text-gray-500">Process Flow & Congestion Data</p>
+                </div>
+            </div>
+            
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-center my-4">
+                <div class="flex justify-center md:col-start-1 lg:col-start-2"> <div class="flow-arrow">↓</div></div>
+                <div class="flex justify-center md:col-start-2 lg:col-start-4"> <div class="flow-arrow">↓</div></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center">
+                <div class="flow-card md:col-span-3 lg:col-span-1 lg:col-start-3">
+                     <div class="text-2xl mb-2">🛡️</div>
+                    <h3 class="font-semibold">Blockchain Security</h3>
+                    <p class="text-sm text-gray-500">Encrypt & Store All Data</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 items-center my-4">
+                 <div class="col-start-1 lg:col-start-3 flex justify-center"><div class="flow-arrow">↓</div></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <div class="flow-card">
+                    <div class="text-2xl mb-2">🚑</div>
+                    <h3 class="font-semibold">Emergency Response</h3>
+                    <p class="text-sm text-gray-500">Alerts sent to Police & Hospitals. Verified by Blockchain.</p>
+                </div>
+
+                <div class="flow-card">
+                    <div class="text-2xl mb-2">🖥️</div>
+                    <h3 class="font-semibold">Monitoring Dashboard</h3>
+                    <p class="text-sm text-gray-500">Displays live status, alerts, and accident reports.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-[#005f73]">AI Object Detection Breakdown</h3>
+                <p class="text-gray-600 mb-4">The system's AI constantly analyzes video feeds, identifying and classifying all objects to understand traffic patterns and detect anomalies. Vehicles make up the vast majority of detected objects.</p>
+                <div class="chart-container">
+                    <canvas id="objectTypeChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-[#005f73]">Typical 24-Hour Traffic Flow</h3>
+                <p class="text-gray-600 mb-4">By tracking vehicle counts over time, the system identifies peak hours and helps traffic managers preemptively adjust signal timings to mitigate congestion before it builds.</p>
+                <div class="chart-container">
+                    <canvas id="trafficFlowChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="kpi-box">
+                <div class="kpi-number">99.8%</div>
+                <div class="kpi-label">AI Detection Accuracy</div>
+            </div>
+            <div class="kpi-box" style="background-color: #0a9396;">
+                 <div class="kpi-number">45%</div>
+                <div class="kpi-label">Reduction in Emergency Response Time</div>
+            </div>
+            <div class="kpi-box" style="background-color: #ee9b00; color: #005f73;">
+                <div class="kpi-number" style="color: #005f73;">25%</div>
+                <div class="kpi-label">Average Congestion Reduction</div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+             <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-[#005f73]">The Blockchain Security Advantage</h3>
+                <p class="text-gray-600 mb-4">Using blockchain technology ensures that all traffic and accident data is tamper-proof. This creates an immutable and transparent log, which is critical for incident reporting and analysis.</p>
+                <div class="chart-container">
+                    <canvas id="securityChart"></canvas>
+                </div>
+            </div>
+             <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                <h3 class="text-xl font-bold mb-4 text-[#005f73]">System Impact and Benefits</h3>
+                <ul class="space-y-4 text-gray-600">
+                    <li class="flex items-start">
+                        <span class="text-[#0a9396] font-bold text-2xl mr-3">✓</span>
+                        <div><strong class="text-gray-800">Enhanced Safety:</strong> Faster accident detection and emergency dispatch saves lives.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#0a9396] font-bold text-2xl mr-3">✓</span>
+                        <div><strong class="text-gray-800">Reduced Congestion:</strong> Proactive traffic management leads to smoother traffic flow and lower emissions.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#0a9396] font-bold text-2xl mr-3">✓</span>
+                        <div><strong class="text-gray-800">Data Integrity:</strong> Blockchain guarantees that all records are secure, verifiable, and cannot be altered.</div>
+                    </li>
+                     <li class="flex items-start">
+                        <span class="text-[#0a9396] font-bold text-2xl mr-3">✓</span>
+                        <div><strong class="text-gray-800">Actionable Insights:</strong> Provides city planners with reliable data to make informed infrastructure decisions.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Smart Traffic Management System Infographic. A concept for safer and more efficient cities.</p>
+        </footer>
+
+    </div>
+
+<script>
+    function wrapLabels(label, maxWidth) {
+        if (typeof label !== 'string' || label.length <= maxWidth) {
+            return label;
+        }
+        const words = label.split(' ');
+        const lines = [];
+        let currentLine = '';
+        words.forEach(word => {
+            if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine = (currentLine + ' ' + word).trim();
+            }
+        });
+        if (currentLine) {
+            lines.push(currentLine);
+        }
+        return lines;
+    }
+    
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        return Array.isArray(label) ? label.join(' ') : label;
+    };
+
+    const brilliantBluesPalette = ['#0a9396', '#ee9b00', '#94d2bd', '#ca6702', '#005f73'];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const objectTypeCtx = document.getElementById('objectTypeChart').getContext('2d');
+        new Chart(objectTypeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Vehicles', 'Pedestrians', 'Bicycles', 'Other'],
+                datasets: [{
+                    label: 'Detected Objects',
+                    data: [85, 10, 3, 2],
+                    backgroundColor: brilliantBluesPalette,
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const trafficFlowCtx = document.getElementById('trafficFlowChart').getContext('2d');
+        new Chart(trafficFlowCtx, {
+            type: 'line',
+            data: {
+                labels: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
+                datasets: [{
+                    label: 'Vehicles per Hour',
+                    data: [150, 100, 80, 300, 750, 600, 550, 650, 800, 850, 500, 250],
+                    backgroundColor: 'rgba(10, 147, 150, 0.2)',
+                    borderColor: '#0a9396',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Vehicle Count'}
+                    }
+                },
+                plugins: {
+                     tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+        
+        const securityCtx = document.getElementById('securityChart').getContext('2d');
+        const rawLabels = ['Data Security Level', 'Record Transparency', 'Immutability Guarantee'];
+        const processedLabels = rawLabels.map(label => wrapLabels(label, 16));
+        
+        new Chart(securityCtx, {
+            type: 'bar',
+            data: {
+                labels: processedLabels,
+                datasets: [{
+                    label: 'Blockchain System',
+                    data: [9.8, 9.9, 10.0],
+                    backgroundColor: '#0a9396',
+                    borderRadius: 4
+                }, {
+                    label: 'Traditional Database',
+                    data: [7.5, 4.0, 2.5],
+                    backgroundColor: '#ca6702',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: { display: true, text: 'Score (out of 10)'}
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
